@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Musicolet Scrobbler"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Headless Last.fm scrobbler for Musicolet"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Section 1: Notification Access -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Notification Access"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_nls_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checking…"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_grant_notification_access"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Notification Access Settings"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Section 2: Battery Optimisation -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Battery Optimisation (Samsung recommended)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_battery_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checking…"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_battery_optimisation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request Battery Exemption"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Section 3: Last.fm Authentication -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Last.fm Credentials"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_auth_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not authenticated"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="API Key (from last.fm/api)"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_api_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Shared Secret"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_shared_secret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last.fm Username"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last.fm Password"
+            android:layout_marginBottom="16dp"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_save_credentials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save &amp; Authenticate"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_clear_auth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Session"
+            android:visibility="gone"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginBottom="32dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Once all steps are complete, close this screen. The scrobbler runs entirely in the background."
+            android:textSize="12sp"
+            android:alpha="0.6"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
